@@ -37,7 +37,7 @@ async def on_message(message):
         await message.channel.send("หวัดไม่ดีนะ")
 
     elif 'บอท' in mes :
-        await message.channel.send("ผมบอทเองครับ" + str(message.author.name))
+        await message.channel.send("ผมบอทเองครับ")
 
     await bot.process_commands(message)
 
@@ -45,6 +45,10 @@ async def on_message(message):
 @bot.command()
 async def hello(ctx):
     await ctx.send('Hello, {}! Jangan lupa subscribenya ya :)'.format(ctx.author.name.title()))
+
+@bot.command()
+async def test(ctx, arg):
+    await ctx.send(arg)
 
 server_on()
 bot.run(os.getenv("TOKEN"))
